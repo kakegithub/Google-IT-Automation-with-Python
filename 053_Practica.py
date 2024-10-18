@@ -1,14 +1,59 @@
-# Habilidades de codificación
+# Convert a list to a tuple
+my_list = [1, 2, 3, 4]
+my_tuple = tuple(my_list)
 
-""" Habilidad Grupo 1
+print(my_tuple)  # Outputs: (1, 2, 3, 4)
 
-    Utilizar un bucle for para modificar elementos de una lista.
+# Remember that although parentheses are often used to define a tuple,
+# they're not always necessary. The following syntax is also valid:
 
-    Utilizar el método list.append().
+my_tuple = 1, 2, 3, 4
+print(my_tuple)  # Outputs: (1, 2, 3, 4)
 
-    Utilice los métodos string.endswith() y string.replace() para modificar los elementos de una lista """
+#####################################################################################
+# A tuple with a list as an element
+my_tuple = (1, 2, ["a", "b", "c"])
 
-# This block of code changes the year on a list of dates.
+# You can't change the tuple itself
+# my_tuple[0] = 3  # This would raise a TypeError
+
+# But you can modify the mutable elements within the tuple
+my_tuple[2][0] = "x"
+print(my_tuple)  # Outputs: (1, 2, ['x', 'b', 'c'])
+######################################################################################
+
+
+# Devolución de múltiples valores desde funciones
+def calculate_numbers(a, b):
+    return a + b, a - b, a * b, a / b
+
+
+result = calculate_numbers(10, 2)
+print(result)  # Outputs: (12, 8, 20, 5.0)
+
+########################################################################################
+
+
+def calculate_numbers(a, b):
+    return a + b, a - b, a * b, a / b
+
+
+add_result, sub_result, mul_result, div_result = calculate_numbers(10, 2)
+print(add_result)  # Outputs: 12
+print(sub_result)  # Outputs: 8
+
+
+########################################################################################
+
+# expresión para variable en secuencia]
+my_list = [x * 2 for x in range(1, 11)]
+
+# expresión para variable en secuencia si condición
+my_list = [x for x in range(1, 101) if x % 10 == 0]
+
+#######################################################################################
+
+# This block of code changes the year on a list of dates.x
 # The "years" list is given with existing elements.
 years = [
     "January 2023",
@@ -43,12 +88,7 @@ for year in years:
 print(updated_years)
 # Should print ["January 2024", "May 2025", "April 2024", "August 2024", "September 2025", "December 2024"]
 
-#####################################################################################################################################################
-
-
-# Grupo de destrezas 2
-
-#     Utilizar una comprensión de lista para devolver valores
+####################################################################################################################3
 
 
 # This list comprehension creates a list of squared numbers (n*n). It
@@ -64,15 +104,7 @@ print(squares(2, 3))  # Should print [4, 9]
 print(squares(1, 5))  # Should print [1, 4, 9, 16, 25]
 print(squares(0, 10))  # Should print [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
-#########################################################################################################################################################
-
-# Grupo de destrezas 3
-
-#     Utilizar una comprensión de lista para modificar elementos de una lista.
-
-#     Utilizar el método string.replace() dentro de una comprensión de lista.
-
-#     Utilizar el método string[index] dentro de una comprensión de lista.
+######################################################################################################################
 
 # This block of code also changes the year on a list of dates using a
 # different approach than demonstrated in Skill Group 1. By using a
@@ -102,18 +134,7 @@ updated_years = [
 print(updated_years)
 # Should print ["January 2024", "May 2025", "April 2024", "August 2024", "September 2025", "December 2024"]
 
-#############################################################################################################################
-
-
-# Grupo de destrezas 4
-
-#     Utilizar el método string.split() para separar una cadena en una lista de palabras individuales.
-
-#     Iterar sobre la nueva lista utilizando un bucle for.
-
-#     Modificar cada elemento de la lista cortando la cadena del elemento en una posición de índice [1:] dada y añadiendo la subcadena al final del elemento.
-
-#     Convierte de nuevo una lista en una cadena.
+########################################################################################################################33
 
 
 # This function splits a given string into a list of elements. Then, it
@@ -150,13 +171,7 @@ print(
     change_string("1one 2two 3three 4four 5five")
 )  # Should print "one-1 two-2 three-3 four-4 five-5"
 
-
-###################################################################################################################
-
-
-# Destreza Grupo 5
-
-#     Utilice el método string.join() para concatenar una cadena que proporciona un nombre de lista y sus elementos.
+####################################################################################################
 
 
 # This function accepts a list name and a list of elements, and returns
@@ -179,13 +194,9 @@ print(
 )
 # Should print "The Printers list includes: Color Printer, Black and White Printer, 3-D Printer"
 
-
-##############################################################################################################################
-
-# Grupo de destrezas 6
+#######################################################################################################
 
 
-#     Utilice map() y convierta el objeto map en una lista para poder imprimir todos los resultados a la vez.
 # A simple function to add 1 to a given number
 def add_one(number):
     return number + 1
@@ -202,4 +213,101 @@ print(list(result))
 
 # Outputs: [2, 3, 4, 5, 6]
 
-###############################################################################################################################
+#######################################################################################################
+
+# Two lists
+names = ["Alice", "Bob", "Charlie"]
+ages = [25, 30, 35]
+
+# Use zip to combine the lists
+combined = zip(names, ages)
+
+# Convert the zip object to a list to print the result
+print(list(combined))
+
+# Outputs: [('Alice', 25), ('Bob', 30), ('Charlie', 35)]
+
+######################################################################################################3
+
+filenames = ["program.c", "stdio.hpp", "sample.hpp", "a.out", "math.hpp", "hpp.out"]
+# Generate new_filenames as a list containing the new filenames
+# using as many lines of code as your chosen method requires.
+
+
+new_filenames = []
+for filename in filenames:
+    if filename.endswith("hpp"):
+        new = filename.replace(".hpp", ".h")
+        new_filenames.append(new)
+    else:
+        new_filenames.append(filename)
+
+
+print(new_filenames)
+# Should be ["program.c", "stdio.h", "sample.h", "a.out", "math.h", "hpp.out"]
+
+#########################################################################################################
+
+filenames = ["program.c", "stdio.hpp", "sample.hpp", "a.out", "math.hpp", "hpp.out"]
+# Generate new_filenames as a list containing the new filenames
+# using as many lines of code as your chosen method requires.
+new_filenames = [
+    filename.replace(".hpp", ".h") if filename.endswith(".hpp") else filename
+    for filename in filenames
+]  # Start your code here
+
+
+print(new_filenames)
+# Should print ["program.c", "stdio.h", "sample.h", "a.out", "math.h", "hpp.out"]
+
+########################################################################################################
+
+
+def pig_latin(text):
+    say = ""
+    # Separate the text into words
+    words = text.split()
+    for word in words:
+        # Create the pig latin word and add it to the list
+        pig_word = word[1:] + word[0] + "ay"
+        say += pig_word + " "
+        # Turn the list back into a phrase
+    return say.strip()
+
+
+print(pig_latin("hello how are you"))  # Should be "ellohay owhay reaay ouyay"
+print(
+    pig_latin("programming in python is fun")
+)  # Should be "rogrammingpay niay ythonpay siay unfay"
+
+#######################################################################################################
+
+
+def biography_list(people):
+    # Iterate over each "person" in the given "people" list of tuples.
+    for person in people:
+
+        # Separate the 3 items in each tuple into 3 variables:
+        # "name", "age", and "profession"
+        name, edad, profession = person
+
+        # Format the required sentence and place the 3 variables
+        # in the correct placeholders using the .format() method.
+        print("{} is {} years old and works as {}".format(name, edad, profession))
+
+
+# Call to the function:
+biography_list(
+    [("Ira", 30, "a Chef"), ("Raj", 35, "a Lawyer"), ("Maria", 25, "an Engineer")]
+)
+
+
+# Click Run to submit code
+
+
+# Output should match:
+# Ira is 30 years old and works as a Chef
+# Raj is 35 years old and works as a Lawyer
+# Maria is 25 years old and works as an Engineer
+
+################################################################################################3
