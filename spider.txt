@@ -1,0 +1,3 @@
+Este es el contenido del archivo "spider.txt"
+Esta es la segunda linea 
+Esta es la tercera
