@@ -5,7 +5,8 @@ import os
 
 def parent_directory():
     # Crear una ruta relativa al directorio padre
-    relative_parent = os.path.join("..", "")  # Combina ".." con una cadena vacía
+    # Combina ".." con una caden vacía
+    relative_parent = os.path.join("..", "")
 
     # Devolver la ruta absoluta del directorio padre
     return os.path.abspath(relative_parent)
