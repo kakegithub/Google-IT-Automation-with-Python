@@ -1,30 +1,26 @@
-# Habilidades de codificación
+# --- Habilidades de codificación ---
 
-# Habilidad Grupo 1
+# --- Grupo de habilidades 1 ---
+# Iterar sobre los pares clave y valor de un diccionario utilizando un bucle for con el método dictionary.items() para calcular la suma de los valores de un diccionario.
 
-#     Iterar sobre los pares clave y valor de un diccionario utilizando un bucle for con el método dictionary.items() para calcular la suma de los valores de un diccionario.
-
-# This function returns the total time, with minutes represented as
-# decimals (example: 1 hour 30 minutes = 1.5), for all end user time
-# spent accessing a server in a given day.
-
-
+# Esta función devuelve el tiempo total, con los minutos representados como decimales (ejemplo: 1 hora 30 minutos = 1.5), para todo el tiempo que el usuario final pasa accediendo a un servidor en un día determinado.
 def sum_server_use_time(Server):
-
-    # Initialize the variable as a float data type, which will be used
-    # to hold the sum of the total hours and minutes of server usage by
-    # end users in a day.
+    """
+    Calcula el tiempo total de uso del servidor por los usuarios finales en un día.
+    Args:
+        Server (dict): Un diccionario donde las claves son los nombres de los usuarios y los valores son el tiempo de uso del servidor en horas.
+    Returns:
+        float: El tiempo total de uso del servidor redondeado a 2 decimales.
+    """
+    # Inicializar la variable como un tipo de datos float, que se utilizará para mantener la suma del total de horas y minutos de uso del servidor por los usuarios finales en un día.
     total_use_time = 0.0
 
-    # Iterate through the "Server" dictionary’s key and value items
-    # using a for loop.
+    # Iterar a través de los elementos clave y valor del diccionario "Server" utilizando un bucle for.
     for key, value in Server.items():
+        # Para cada clave de usuario final, añadir el valor de tiempo asociado a la suma total de todo el tiempo de uso del usuario final.
+        total_use_time += value
 
-        # For each end user key, add the associated time value to the
-        # total sum of all end user use time.
-        total_use_time += Server[key]
-
-    # Round the return value and limit to 2 decimal places.
+    # Redondear el valor de retorno y limitar a 2 decimales.
     return round(total_use_time, 2)
 
 
@@ -37,45 +33,34 @@ FileServer = {
     "EndUser6": 8,
 }
 
-print(sum_server_use_time(FileServer))  # Should print 20.1
+print(sum_server_use_time(FileServer))  # Debería imprimir 20.1
 
+# --- Grupo de habilidades 2 ---
+# Concatenar un valor, una cadena y la clave de cada elemento del diccionario y añadirlos al final de una nueva lista[] mediante el método list.append(x).
+# Iterar sobre claves con múltiples valores de un diccionario utilizando bucles for anidados con el método dictionary.items().
 
-##########################################################################################################
-
-
-# Grupo de destrezas 2
-
-#     Concatene un valor, una cadena y la clave de cada elemento del diccionario y añádalos al final de una nueva lista[ ] mediante el método list.append(x).
-
-#     Iterar sobre claves con múltiples valores de un diccionario utilizando bucles for anidados con el método dictionary.items().
-
-# This function receives a dictionary, which contains common employee
-# last names as keys, and a list of employee first names as values.
-# The function generates a new list that contains each employees’ full
-# name (First_name Last_Name). For example, the key "Garcia" with the
-# values ["Maria", "Hugo", "Lucia"] should be converted to a list
-# that contains ["Maria Garcia", "Hugo Garcia", "Lucia Garcia"].
-
-
+# Esta función recibe un diccionario, que contiene apellidos comunes de empleados como claves, y una lista de nombres de empleados como valores.
+# La función genera una nueva lista que contiene el nombre completo de cada empleado (Nombre Apellido).
+# Por ejemplo, la clave "Garcia" con los valores ["Maria", "Hugo", "Lucia"] debe convertirse en una lista que contiene ["Maria Garcia", "Hugo Garcia", "Lucia Garcia"].
 def list_full_names(employee_dictionary):
-    # Initialize the "full_names" variable as a list data type using
-    # empty [] square brackets.
+    """
+    Genera una lista de nombres completos de empleados a partir de un diccionario de apellidos y nombres.
+    Args:
+        employee_dictionary (dict): Un diccionario donde las claves son los apellidos y los valores son listas de nombres.
+    Returns:
+        list: Una lista de nombres completos de empleados.
+    """
+    # Inicializar la variable "full_names" como un tipo de datos de lista utilizando corchetes [] vacíos.
     full_names = []
 
-    # The outer for loop iterates through each "last_name" key and
-    # associated "first_name" values, in the "employee_dictionary" items.
+    # El bucle for externo itera a través de cada clave "last_name" y los valores "first_name" asociados, en los elementos "employee_dictionary".
     for last_name, first_names in employee_dictionary.items():
-
-        # The inner for loop iterates over each "first_name" value in
-        # the list of "first_names" for one "last_name" key at a time.
+        # El bucle for interno itera sobre cada valor "first_name" en la lista de "first_names" para una clave "last_name" a la vez.
         for first_name in first_names:
-
-            # Append the new "full_names" list with the "first_name" value
-            # concatenated with a space " ", and the key "last_name".
+            # Añadir la nueva lista "full_names" con el valor "first_name" concatenado con un espacio " ", y la clave "last_name".
             full_names.append(first_name + " " + last_name)
 
-    # Return the new "full_names" list once the outer for loop has
-    # completed all iterations.
+    # Devolver la nueva lista "full_names" una vez que el bucle for externo ha completado todas las iteraciones.
     return full_names
 
 
@@ -88,47 +73,38 @@ print(
         }
     )
 )
-# Should print ['Muhammad Ali', 'Amir Ali', 'Malik Ali', 'Ram Devi', 'Amaira Devi', 'Feng Chen', 'Li Chen']
+# Debería imprimir ['Muhammad Ali', 'Amir Ali', 'Malik Ali', 'Ram Devi', 'Amaira Devi', 'Feng Chen', 'Li Chen']
 
-##############################################################################################################################
+# --- Grupo de habilidades 3 ---
+# Utilizar la operación dictionary[key] = value para asociar un valor a una clave de un diccionario.
+# Iterar sobre claves con múltiples valores de un diccionario, utilizando bucles for anidados y una sentencia if, y el método dictionary.items().
+# Utilice el método dictionary[key].append(value) para añadir la clave, una cadena y la clave de cada elemento del diccionario.
 
-# Grupo de destrezas 3
-
-#     Utilizar la operación dictionary[key] = value para asociar un valor a una clave de un diccionario.
-
-#     Iterar sobre claves con múltiples valores de un diccionario, utilizando bucles for anidados y una sentencia if, y el método dictionary.items().
-
-#     Utilice el método dictionary[key].append(value) para añadir la clave, una cadena y la clave de cada elemento del diccionario.
-
-# This function receives a dictionary, which contains resource
-# categories (keys) with a list of available resources (values) for a
-# company’s IT Department. The resources belong to multiple categories.
-# The function should reverse the keys and values to show which
-# categories (values) each resource (key) belongs to.
-
-
+# Esta función recibe un diccionario, que contiene categorías de recursos (claves) con una lista de recursos disponibles (valores) para el Departamento de TI de una empresa.
+# Los recursos pertenecen a múltiples categorías.
+# La función debe invertir las claves y los valores para mostrar a qué categorías (valores) pertenece cada recurso (clave).
 def invert_resource_dict(resource_dictionary):
-    # Initialize a "new_dictionary" variable as a dict data type using
-    # empty {} curly brackets.
+    """
+    Invierte un diccionario de recursos para mostrar a qué categorías pertenece cada recurso.
+    Args:
+        resource_dictionary (dict): Un diccionario donde las claves son las categorías de recursos y los valores son listas de recursos.
+    Returns:
+        dict: Un diccionario invertido donde las claves son los recursos y los valores son listas de categorías.
+    """
+    # Inicializar una variable "new_dictionary" como un tipo de datos dict utilizando corchetes {} rizados vacíos.
     new_dictionary = {}
-    # The outer for loop iterates through each "resource_group" and
-    # associated "resources" in the "resource_dictionary" items.
+    # El bucle for externo itera a través de cada "resource_group" y los "resources" asociados en los elementos "resource_dictionary".
     for resource_group, resources in resource_dictionary.items():
-        # The inner for loop iterates over each "resource" value in
-        # the list of "resources" for one "resource_group" key at a time.
+        # El bucle for interno itera sobre cada valor "resource" en la lista de "resources" para una clave "resource_group" a la vez.
         for resource in resources:
-            # The if-statement checks if the current "resource" value has
-            # been appended as a key to the "new_dictionary" yet.
+            # La sentencia if comprueba si el valor "resource" actual ha sido añadido como una clave al "new_dictionary" todavía.
             if resource in new_dictionary:
-                # If True, then append the "resource_group" as a value to the
-                # "resource", which is now the key.
+                # Si es True, entonces añadir el "resource_group" como un valor al "resource", que ahora es la clave.
                 new_dictionary[resource].append(resource_group)
-            # If False (else), then add the "resource" as a new key with the
-            # "resource_group" as a value for that key.
+            # Si es False (else), entonces añadir el "resource" como una nueva clave con el "resource_group" como un valor para esa clave.
             else:
                 new_dictionary[resource] = [resource_group]
-    # Return the new dictionary once the outer for loop has completed
-    # all iterations.
+    # Devolver el nuevo diccionario una vez que el bucle for externo ha completado todas las iteraciones.
     return new_dictionary
 
 
@@ -146,15 +122,17 @@ print(
         }
     )
 )
-# Should print {'IDE HDDs': ['Hard Drives', 'PC Parts'], 'SCSI HDDs': ['Hard Drives', 'PC Parts'], 'High-end video cards': ['PC Parts', 'Video Cards'], 'Basic video cards': ['PC Parts', 'Video Cards']}
-
-################################################################################################################################################
-
+# Debería imprimir {'IDE HDDs': ['Hard Drives', 'PC Parts'], 'SCSI HDDs': ['Hard Drives', 'PC Parts'], 'High-end video cards': ['PC Parts', 'Video Cards'], 'Basic video cards': ['PC Parts', 'Video Cards']}
 
 # La función email_list recibe un diccionario, que contiene nombres de dominio como claves, y una lista de usuarios como valores. Rellene los espacios en blanco para generar una lista que contenga direcciones de correo electrónico completas (por ejemplo, diana.prince@gmail.com).
-
-
 def email_list(domains):
+    """
+    Genera una lista de direcciones de correo electrónico completas a partir de un diccionario de dominios y usuarios.
+    Args:
+        domains (dict): Un diccionario donde las claves son los dominios y los valores son listas de usuarios.
+    Returns:
+        list: Una lista de direcciones de correo electrónico completas.
+    """
     emails = []
     for domain, users in domains.items():
         for user in users:
@@ -173,21 +151,24 @@ print(
 )
 # ['clark.kent@gmail.com', 'diana.prince@gmail.com', 'peter.parker@gmail.com', 'barbara.gordon@yahoo.com', 'jean.grey@yahoo.com', 'bruce.wayne@hotmail.com']
 
-############################################################################################################################################3
-
 # La función groups_per_user recibe un diccionario, que contiene los nombres de los grupos con la lista de usuarios. Los usuarios pueden pertenecer a varios grupos. Rellena los espacios en blanco para devolver un diccionario con los usuarios como claves y una lista de sus grupos como valores.
-
-
 def groups_per_user(group_dictionary):
+    """
+    Genera un diccionario donde las claves son los usuarios y los valores son listas de grupos a los que pertenecen.
+    Args:
+        group_dictionary (dict): Un diccionario donde las claves son los nombres de los grupos y los valores son listas de usuarios.
+    Returns:
+        dict: Un diccionario donde las claves son los usuarios y los valores son listas de grupos.
+    """
     user_groups = {}
-    # Go through group_dictionary
+    # Ir a través de group_dictionary
     for group, users in group_dictionary.items():
-        # Now go through the users in the group
+        # Ahora ir a través de los usuarios en el grupo
         for user in users:
-            # If the user is not already in the dictionary, add them
+            # Si el usuario no está ya en el diccionario, añadirlo
             if user not in user_groups:
                 user_groups[user] = []
-            # Add the group to the user's list
+            # Añadir el grupo a la lista del usuario
             user_groups[user].append(group)
     return user_groups
 
@@ -201,31 +182,32 @@ print(
         }
     )
 )
-
-################################################################################################################
+# {'admin': ['local', 'public', 'administrator'], 'userA': ['local'], 'userB': ['public']}
 
 # El método dict.update actualiza un diccionario con los elementos procedentes del otro diccionario, de forma que se sustituyen las entradas existentes y se añaden otras nuevas. ¿Cuál es el contenido del diccionario "armario" al final del siguiente código?
-
 wardrobe = {"shirt": ["red", "blue", "white"], "jeans": ["blue", "black"]}
 new_items = {"jeans": ["white"], "scarf": ["yellow"], "socks": ["black", "brown"]}
 wardrobe.update(new_items)
-
-#
-###############################################################################################################3
+print(wardrobe)
+# {'shirt': ['red', 'blue', 'white'], 'jeans': ['white'], 'scarf': ['yellow'], 'socks': ['black', 'brown']}
 
 # La función sumar_precios devuelve el precio total de todos los comestibles del diccionario. Rellene los espacios en blanco para completar esta función.
-
-
 def add_prices(basket):
-    # Initialize the variable that will be used for the calculation
+    """
+    Calcula el precio total de todos los comestibles en el diccionario.
+    Args:
+        basket (dict): Un diccionario donde las claves son los nombres de los comestibles y los valores son sus precios.
+    Returns:
+        float: El precio total de todos los comestibles redondeado a 2 decimales.
+    """
+    # Inicializar la variable que se utilizará para el cálculo
     total = 0
-    # Iterate through the dictionary items
+    # Iterar a través de los elementos del diccionario
     for price in basket.values():
-        # Add each price to the total calculation
-        # Hint: how do you access the values of
-        # dictionary items?
+        # Añadir cada precio al cálculo total
+        # Pista: ¿cómo se accede a los valores de los elementos del diccionario?
         total += price
-    # Limit the return value to 2 decimal places
+    # Limitar el valor de retorno a 2 decimales
     return round(total, 2)
 
 
@@ -240,6 +222,4 @@ groceries = {
     "cheese": 5.44,
 }
 
-print(add_prices(groceries))  # Should print 28.44
-
-# 28.44
+print(add_prices(groceries))  # Debería imprimir 28.44

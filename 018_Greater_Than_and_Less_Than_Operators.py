@@ -1,18 +1,12 @@
-print(11 > 3*3)             # The > operator checks if the left value is
-#True                       # greater than the right value. If true, it
-                            # returns a True result.
+# Demostración de los operadores mayor que (>) y menor que (<) en Python
 
+print(11 > 3 * 3)  # True: 11 es mayor que 3*3 (11 > 9)
 
-print(4/2 > 8-4)            # If the > operator finds that the left value
-#False                      # is NOT greater than the right value, the
-                            # comparison will return a False result.
+# Si el valor de la izquierda no es mayor que el de la derecha, el resultado es False
+print(4 / 2 > 8 - 4)  # False: 2.0 no es mayor que 4
 
+# El operador < verifica si el valor de la izquierda es menor que el de la derecha
+print(4 / 2 < 8 - 4)  # True: 2.0 es menor que 4
 
-print(4/2 < 8-4)            # The < operator checks  if the left value is
-#True                       # less than the right side. If true, the
-                            # comparison returns a True result.
-
-
-print(11 < 3*3)             # If the < operator finds that the left side is False                   
-                            # NOT less than the right value, Python returns
-#False                      # a False result.
+# Si el valor de la izquierda no es menor que el de la derecha, el resultado es False
+print(11 < 3 * 3)  # False: 11 no es menor que 9

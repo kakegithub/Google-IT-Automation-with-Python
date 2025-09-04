@@ -1,18 +1,32 @@
-def calculate_storage(filesize):
+# Cálculo de almacenamiento asignado en bloques de 4096 bytes
+
+def calculate_storage(filesize: int) -> int:
+    """Calcula los bytes totales a asignar en disco para un archivo.
+
+    Los sistemas de archivos suelen asignar espacio en bloques fijos.
+    Aquí usamos un tamaño de bloque de 4096 bytes. Si el archivo no
+    llena un bloque completo, se asigna un bloque adicional.
+
+    Parámetros:
+        filesize (int): Tamaño del archivo en bytes.
+
+    Retorna:
+        int: Bytes totales asignados (múltiplo de 4096).
+    """
     block_size = 4096
-    # Use floor division to calculate how many blocks are fully occupied
+    # División entera: cantidad de bloques completos ocupados
     full_blocks = filesize // block_size
-    # Use the modulo operator to check whether there's any remainder
-    partial_block_remainder = filesize % block_size
-    # Depending on whether there's a remainder or not, return
-    # the total number of bytes required to allocate enough blocks
-    # to store your data.
-    if partial_block_remainder > 0:
+    # Resto de bytes que no llenan un bloque completo
+    remainder = filesize % block_size
+    # Si hay resto, se necesita un bloque adicional
+    if remainder > 0:
         full_blocks += 1
+    # Bytes totales asignados
     return full_blocks * block_size
 
 
-print(calculate_storage(1))  # Should be 4096
-print(calculate_storage(4096))  # Should be 4096
-print(calculate_storage(4097))  # Should be 8192
-print(calculate_storage(6000))  # Should be 8192
+# Pruebas rápidas (salida esperada indicada a la derecha)
+print(calculate_storage(1))      # 4096
+print(calculate_storage(4096))   # 4096
+print(calculate_storage(4097))   # 8192
+print(calculate_storage(6000))   # 8192

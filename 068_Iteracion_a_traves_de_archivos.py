@@ -1,25 +1,25 @@
 with open("spider.txt") as file:
     # Itera a través de cada línea del archivo
     for line in file:
-        # Imprime la línea actual
-        print(line.upper())  # Elimina el salto de línea al final de cada línea
+        # Imprime la línea actual en mayúsculas
+        print(line.upper())  # Imprime la línea en mayúsculas (incluyendo el salto de línea al final)
 
-print("-----")
+print("-----")  # Imprime una línea separadora
 
 with open("spider.txt") as file:
     # Itera a través de cada línea del archivo
     for line in file:
-        # Imprime la línea actual sin el salto de línea al final
-        # Elimina el salto de línea al final de cada línea
-        print(line.strip().upper())
+        # Imprime la línea actual en mayúsculas, eliminando el salto de línea al final
+        print(line.strip().upper())  # Elimina los espacios en blanco al principio y al final de la línea, la convierte a mayúsculas y la imprime
 
-print("-----")
+print("-----")  # Imprime una línea separadora
 
 with open("spider.txt") as file:
-    lines = file.readlines()
     # Lee todas las líneas del archivo y las almacena en una lista
-    file.close()  # Cierra el archivo
+    lines = file.readlines()
+    # El archivo se cierra automáticamente al salir del bloque "with", por lo que no es necesario cerrarlo explícitamente
+    # file.close()  # Cierra el archivo (innecesario con la instrucción "with")
     lines.sort()  # Ordena las líneas alfabéticamente
     print(lines)  # Imprime la lista de líneas ordenadas
 
-print("-----")
+print("-----")  # Imprime una línea separadora

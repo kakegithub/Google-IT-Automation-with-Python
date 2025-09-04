@@ -1,131 +1,103 @@
-# Skill Group 1
+# Grupo de habilidades 1
+# Comparaciones numéricas y de cadenas (lexicográficas por Unicode)
 
-# The value of 10*4 (40) is greater than 14+23 (37), therefore this
-# comparison expression will return the Boolean value of True.
-
-
+# 10*4 (40) es mayor que 14+23 (37) -> imprime True
 print(10 * 4 > 14 + 23)  # Should print True
 
-# The letter "t" has a Unicode value of 116 and the letter "s" has a
-# Unicode value of 115. Since 116 is not less than 115, the
-# comparison of "tall" < "short" (or 116 < 115) is False.
-
+# 't'(116) no es menor que 's'(115); "tall" < "short" es False -> imprime False
 print("tall" < "short")  # Should print False
 
-print("")
+print()
 
 
-# Skill Group 2
-# This function accepts one variable as a parameter
-def translate_error_code(error_code):
+# Grupo de habilidades 2
+# Esta función traduce ciertos códigos de error a mensajes descriptivos
 
-    # The if-elif-else block assesses the value of the variable
-    # passed to the function as a parameter. The if statement uses
-    # the equality operator == to test the value of the variable.
-    # This test returns a Boolean (True/False) result.
+def translate_error_code(error_code: str) -> str:
+    """Traduce códigos de error HTTP a una descripción en texto.
+
+    Parámetros:
+        error_code (str): Código de error, por ejemplo "404 Not Found".
+
+    Retorna:
+        str: Descripción del error.
+    """
+    # Se usa una cascada if/elif/else para comparar por igualdad (==)
     if error_code == "401 Unauthorized":
-        # If the comparison above returns True, then the indented
-        # line(s) inside the if-statement will run. In this case, the
-        # action is to assign a string to the translation variable.
-        # The remainder of the if-elif-else block will not run.
-        # The Python interpreter will skip to the next line outside of
-        # the if-elif-else block. In this case, the next line is the
-        # return value statement.
+        # Coincidencia exacta con 401
         translation = "Server received an unauthenticated request"
-
-    # If the initial if-statement returns a False result, then the
-    # first elif-statement will run a different test on the value
-    # of the variable.
     elif error_code == "404 Not Found":
-        # If the first elif-statement returns a True result, then the
-        # indented line(s) inside the first elif-statement will run.
-        # After this line, the remainder of the if-elif-else block will
-        # not run. The Python interpreter will skip to the next line
-        # outside of the if-elif-else block.
+        # Coincidencia exacta con 404
         translation = "Requested web page not found on server"
-
-    # If both the initial if-statement and the first elif-statement
-    # return a False result, then the second elif-statement will
-    # run.
     elif error_code == "408 Request Timeout":
-        # If the second elif-statement returns a True result, then the
-        # indented line(s) inside the second elif-statement will run.
-        # After this line, the remainder of the if-elif-else block will
-        # not run. The Python interpreter will skip to the next line
-        # outside of the if-elif-else block.
+        # Coincidencia exacta con 408
         translation = "Server request to close unused connection"
-
-    # If the conditional tests above do not produce a True result
-    # then the else-statement will run.
     else:
+        # Cualquier otro código no contemplado
         translation = "Unknown error code"
-    # The if-elif-else block ends.
 
-    # The next line outside of the if-elif-else block will run
-    # after exiting the block. In this case, the next line returns
-    # the output from the if-elif-else block.
+    # Devuelve la traducción seleccionada
     return translation
 
 
-# The print() function allows us to display the output of the
-# function. To call a function in a print statement, the syntax
-# is print(name_of_function(parameter))
+# Muestra el resultado de traducir un código de error
+# Salida esperada: "Requested web page not found on server"
 print(translate_error_code("404 Not Found"))
 
-# Expected output:
-# Requested web page not found on server
+print()
 
-print("")
 
-# Skill Group 3
-# Sets value of the "number" variable
-number = 25
+# Grupo de habilidades 3
+# Estructura if/elif/else con múltiples comparaciones
 
-# The "number" variable will first be compared to 5. Since it is
-# False that "number" is not less than or equal to 5, the expression indented
-# under this line will be ignored.
+number = 25  # Valor de ejemplo
+
+# Se analiza number contra varios rangos/valores
 if number <= 5:
+    # Caso: 5 o menor
     print("The number is 5 or smaller.")
-
-# Next, the "number" variable will be compared to 33. Since it is
-# False that "number" is equal to 33, the expression indented under
-# this line will be ignored.
 elif number == 33:
+    # Caso: exactamente 33
     print("The number is 33.")
-
-# Then, the "number" variable will be compared to 32 and 6. Since it
-# is True that 25 is less than 32 and greater than 6, the Python
-# interpreter will print "The number is less than 32 and/or greater
-# than 6." Then, it will exit the if-elif-else statement and the remainder
-# of the if-elif-else statement will be ignored.
 elif number < 32 and number >= 6:
+    # Caso: entre 6 y 31 (inclusive 6, exclusivo 32)
     print("The number is less than 32 and greater than 6.")
-
 else:
+    # Cualquier otro caso
     print("The number is " + str(number))
 
-# Expected output is:
-# The number is less than 32 and greater than 6.
-print("")
+# Salida esperada con number = 25: "The number is less than 32 and greater than 6."
+print()
 
 
-# Skill Group 4
-# This function rounds a variable number up to the nearest 10x value
-def round_up(number):
-    x = 10
-    # The floor division operator will calculate the integer value of
-    # "number" divided by x: 35 // 10 will return the integer 3.
-    whole_number = number // x
-    # The modulo operator will calculate the remainder value of "number"
-    # divided by x: 35 % 10 will return the remainder value 5.
-    remainder = number % x
-    # If the remainder is greater than or equal to 5:
+# Grupo de habilidades 4
+# Redondeo a múltiplos de 10 hacia arriba si el resto es >= 5
+
+
+def round_up(number: int) -> int:
+    """Redondea un número al múltiplo de 10 más cercano.
+
+    Reglas:
+        - Si el resto al dividir entre 10 es >= 5, redondea hacia arriba.
+        - En caso contrario, redondea hacia abajo al múltiplo de 10 inferior.
+
+    Parámetros:
+        number (int): Número a redondear.
+
+    Retorna:
+        int: Número redondeado al múltiplo de 10 más cercano según la regla.
+    """
+    base = 10
+    whole_number = number // base  # División entera: 35 // 10 -> 3
+    remainder = number % base      # Resto: 35 % 10 -> 5
+
     if remainder >= 5:
-        # Return x multiplied by the (whole_number+1) to round up
-        return x * (whole_number + 1)
-    # Else, return x multiplied by the whole_number to round down
-    return x * whole_number
+        # Redondeo hacia arriba
+        return base * (whole_number + 1)
+
+    # Redondeo hacia abajo
+    return base * whole_number
 
 
-# Calls the function with the parameter value of 35.
+# Llamada de ejemplo: 35 se redondea a 40
 print(round_up(35))  # Should print 40

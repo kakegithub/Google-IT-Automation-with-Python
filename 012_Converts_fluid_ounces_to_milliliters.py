@@ -1,19 +1,24 @@
-# This function converts fluid ounces to milliliters and returns the 
-# result of the conversion.
-def convert_volume(fluid_ounce):
-# Calculate value of the "ml" variable using the parameter variable 
-# "fluid_ounce". There are approximately 29.5 milliliters in 1 fluid
-# ounce.
-    ml = fluid_ounce * 29.5  
-# Return the result of the calculation.  
+# Esta función convierte onzas líquidas (fluid ounces) a mililitros y 
+# devuelve el resultado de la conversión.
+
+def convert_volume(fluid_ounce: float) -> float:
+    """
+    Convierte un volumen en onzas líquidas (fl oz) a mililitros (ml).
+    Aproximación: 1 fl oz ≈ 29.5 ml.
+    """
+    # Calcula el valor de "ml" usando el parámetro "fluid_ounce".
+    ml = fluid_ounce * 29.5
+    # Devuelve el resultado del cálculo.
     return ml
- 
-# Call the conversion from within the print() function using 2 fluid 
-# ounces. Convert the return value from a float to a string.  
-print("The volume in milliliters is " + str(convert_volume(2)))
- 
-# Call the function again and double the 2 fluid ounces from within
-# the print function.
-print("The volume in milliliters is " + str(convert_volume(2)*2))
-# Alternative calculation:
-# print("The volume in milliliters is " + str(convert_volume(4))
+
+
+if __name__ == "__main__":
+    # Llama a la conversión dentro de la función print() usando 2 onzas líquidas.
+    # Convierte el valor de retorno de float a string para concatenarlo.
+    print("The volume in milliliters is " + str(convert_volume(2)))
+
+    # Vuelve a llamar a la función y duplica las 2 onzas líquidas desde la propia print.
+    print("The volume in milliliters is " + str(convert_volume(2) * 2))
+
+    # Cálculo alternativo equivalente (2 * 2 = 4 fl oz):
+    # print("The volume in milliliters is " + str(convert_volume(4)))

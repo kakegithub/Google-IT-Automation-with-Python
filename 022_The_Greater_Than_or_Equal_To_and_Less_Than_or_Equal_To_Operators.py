@@ -1,12 +1,10 @@
-# Use the Unicode chart in Part 2 to determine if the Unicode values of 
-# the first letters of each string are higher, lower, or equal to one
-# another. 
+# Comparaciones lexicográficas (Unicode) con >= y <= sobre cadenas
+# Se compara letra a letra por su valor Unicode hasta encontrar una diferencia.
 
+var1 = "my computer" >= "my chair"   # True: tras "my ", 'o'(111) > 'h'(104)
+var2 = "Spring" <= "Winter"           # True: 'S'(83) <= 'W'(87)
+var3 = "pineapple" >= "pineapple"     # True: cadenas idénticas; se cumple por igualdad
 
-var1 = "my computer" >= "my chair"
-var2 = "Spring" <= "Winter"
-var3 = "pineapple" >= "pineapple"
- 
 print("Is \"my computer\" greater than or equal to \"my chair\"? Result: ", var1)
 print("Is \"Spring\" less than or equal to \"Winter\"? Result: ", var2)
-print("Is \"pineapple\" less than or equal to \"pineapple\"? Result: ", var3)
+print("Is \"pineapple\" greater than or equal to \"pineapple\"? Result: ", var3)

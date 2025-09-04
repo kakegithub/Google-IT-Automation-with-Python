@@ -1,18 +1,10 @@
+# Demostración de los operadores de igualdad (==) y desigualdad (!=) en Python
 
-print(32 == 30+2)       # The == operator checks if the 2 values are 
-#True                   # equal to each other. If they are equal, 
-                        # Python returns a True result.
+print(32 == 30 + 2)  # True: 32 es igual a 30 + 2 (32 == 32)
 
+print(5 + 10 == 6 + 7)  # False: 15 no es igual a 13 (15 != 13)
 
-print(5+10 == 6+7)      # If the two values are not equal, as in the
-#False                  # expression 5+10 == 6+7 (or 15 == 13), Python          
-                        # returns a False result.
+print(10 - 4 != 10 + 4)  # True: 6 es distinto de 14 (6 != 14)
 
-
-print(10-4 != 10+4)     # The != operator checks if the 2 values are
-#True                   # NOT equal to each other. If true, Python              
-                        # returns a True result. 
-
-
-print(9/3 != 3*1)       # In this last example, 9/3 != 3*1 (or 3 != 3)
-#False                  # is false. So, Python returns a False value.
+# En Python 3, la división 9/3 da 3.0 y 3*1 da 3; para igualdad son equivalentes
+print(9 / 3 != 3 * 1)  # False: 3.0 no es distinto de 3

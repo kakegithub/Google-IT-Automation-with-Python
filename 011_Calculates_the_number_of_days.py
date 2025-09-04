@@ -1,14 +1,26 @@
-# This function calculates the number of days in a variable number of 
-# years, months, and days. These variables are provided by the user and
-# are passed to the function through the function’s parameters.
-def find_total_days(years, months, days):
-# Assign a variable to hold the calculations for the number of days in
-# a year (years*365) plus the number of days in a month (months*30) plus
-# the number of days provided through the "days" parameter variable.
-    my_days = (years*365) + (months*30) + days
-# Use the "return" keyword to send the result of the "my_days"  
-# calculation to the function call. 
-    return my_days
- 
-# Function call with user provided parameter values. 
-print(find_total_days(2,5,23))
+"""
+Calcula el número total de días a partir de años, meses y días.
+Suposición: 1 mes = 30 días. No contempla años bisiestos.
+"""
+
+
+def find_total_days(years: int, months: int, days: int) -> int:
+    """
+    Calcula el total de días dado un número de años, meses y días.
+
+    Parámetros:
+        years (int): Cantidad de años.
+        months (int): Cantidad de meses (se asume 30 días por mes).
+        days (int): Cantidad de días.
+
+    Retorna:
+        int: Total de días.
+    """
+    # Convertir años y meses a días y sumarlos con los días recibidos
+    total_days = years * 365 + months * 30 + days
+    return total_days
+
+
+if __name__ == "__main__":
+    # Ejemplo de uso: 2 años, 5 meses y 23 días
+    print(find_total_days(2, 5, 23))

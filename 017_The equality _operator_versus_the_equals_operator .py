@@ -1,16 +1,8 @@
+# Demostración: operador de asignación (=) vs operador de igualdad (==)
 
-# The = equals assignment operator is used to assign a value to a 
-# variable.
+# '=' asigna un valor a una variable
+my_variable = 3 * 5  # Asigna el valor 15 a my_variable
+print(my_variable)   # Imprime 15 (el valor almacenado en la variable)
 
-my_variable = 3*5               # Assigns a value to my_variable      
-print(my_variable)              # Printing the variable returns the 
-#15                             # value assigned to the variable.
-
-
-                              
-# The == equality comparison operator checks if the values of the two
-# expressions on either side of the == operator are equivalent to one 
-# another.
-      
-print(my_variable == 3*5)       # Printing the variable returns a Boolean 
-#True                           # True or False result. 
+# '==' compara si dos expresiones tienen el mismo valor
+print(my_variable == 3 * 5)  # Imprime True: 15 == 15

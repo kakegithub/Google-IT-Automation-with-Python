@@ -1,138 +1,127 @@
 ###################################################################################
 
 x = {}
-type(x)
+print(type(x))  # Imprime el tipo de 'x', que es un diccionario.
 # <class 'dict'>
-#####################################################################################
 
+# --- Creación de un diccionario con conteo de archivos por extensión ---
 file_counts = {"jpg": 10, "txt": 14, "csv": 2, "py": 23}
-print(file_counts)
-
+print(file_counts)  # Imprime el diccionario file_counts.
 # {'jpg': 10, 'txt': 14, 'csv': 2, 'py': 23}
 
-#######################################################################################
-
+# --- Acceder al valor asociado a la clave "txt" ---
 file_counts = {"jpg": 10, "txt": 14, "csv": 2, "py": 23}
-file_counts["txt"]
-
+print(file_counts["txt"])  # Imprime el valor asociado a la clave "txt".
 # 14
 
-######################################################################################
-
+# --- Comprobar si una clave existe en el diccionario ---
 file_counts = {"jpg": 10, "txt": 14, "csv": 2, "py": 23}
-"jpg" in file_counts
-"html" in file_counts
-
+print("jpg" in file_counts)  # Comprueba si "jpg" es una clave en file_counts.
+print("html" in file_counts)  # Comprueba si "html" es una clave en file_counts.
+# True
 # False
 
-########################################################################################
-
+# --- Agregar un nuevo par clave-valor al diccionario ---
 file_counts = {"jpg": 10, "txt": 14, "csv": 2, "py": 23}
-file_counts["cfg"] = 8
-print(file_counts)
-
+file_counts["cfg"] = 8  # Agrega la clave "cfg" con el valor 8.
+print(file_counts)  # Imprime el diccionario actualizado.
 # {'jpg': 10, 'txt': 14, 'csv': 2, 'py': 23, 'cfg': 8}
 
-########################################################################################
-
+# --- Modificar el valor asociado a una clave existente ---
 file_counts = {"jpg": 10, "txt": 14, "csv": 2, "py": 23}
-file_counts["csv"] = 17
-print(file_counts)
-
+file_counts["csv"] = 17  # Modifica el valor de la clave "csv" a 17.
+print(file_counts)  # Imprime el diccionario con el valor modificado.
 # {'jpg': 10, 'txt': 14, 'csv': 17, 'py': 23}
 
-#########################################################################################
-
+# --- Eliminar un par clave-valor del diccionario ---
 file_counts = {"jpg": 10, "txt": 14, "csv": 2, "py": 23, "cfg": 8}
-del file_counts["cfg"]
-print(file_counts)
-
+del file_counts["cfg"]  # Elimina la clave "cfg" y su valor asociado.
+print(file_counts)  # Imprime el diccionario sin la clave eliminada.
 # {'jpg': 10, 'txt': 14, 'csv': 2, 'py': 23}
 
-##########################################################################################
-
+# --- Iterar sobre las claves del diccionario ---
 file_counts = {"jpg": 10, "txt": 14, "csv": 2, "py": 23}
-for extension in file_counts:
-    print(extension)
-
+for extension in file_counts:  # Itera sobre cada clave en el diccionario.
+    print(extension)  # Imprime la clave actual.
 # jpg txt csv py
 
-#############################################################################################
-
+# --- Iterar sobre los pares clave-valor del diccionario ---
 file_counts = {"jpg": 10, "txt": 14, "csv": 2, "py": 23}
-for ext, amount in file_counts.items():
-    print("There are {} files with the .{} extension".format(amount, ext))
-
+for ext, amount in file_counts.items():  # Itera sobre cada par clave-valor.
+    print(
+        "There are {} files with the .{} extension".format(amount, ext)
+    )  # Imprime un mensaje con la cantidad y la extensión.
 # There are 10 files with the .jpg extension
 # There are 14 files with the .txt extension
 # There are 2 files with the .csv extension
 # There are 23 files with the .py extension
 
-##############################################################################################
-
+# --- Obtener las claves y los valores del diccionario ---
 file_counts = {"jpg": 10, "txt": 14, "csv": 2, "py": 23}
-file_counts.keys()
-file_counts.values()
-
+print(file_counts.keys())  # Imprime las claves del diccionario.
+print(file_counts.values())  # Imprime los valores del diccionario.
+# dict_keys(['jpg', 'txt', 'csv', 'py'])
 # dict_values([10, 14, 2, 23])
 
-################################################################################################
-
+# --- Iterar sobre los valores del diccionario ---
 file_counts = {"jpg": 10, "txt": 14, "csv": 2, "py": 23}
-for value in file_counts.values():
-    print(value)
-
+for value in file_counts.values():  # Itera sobre cada valor en el diccionario.
+    print(value)  # Imprime el valor actual.
 # 10
 # 14
 # 2
 # 23
 
-####################################################################################################
-
-
+# --- Función para contar la frecuencia de cada letra en un texto ---
 def count_letters(text):
-    result = {}
-    for letter in text:
-        if letter not in result:
-            result[letter] = 0
-        result[letter] += 1
-    return result
+    """
+    Cuenta la frecuencia de cada letra en un texto.
+    Args:
+        text (str): El texto a analizar.
+    Returns:
+        dict: Un diccionario donde las claves son las letras y los valores son sus frecuencias.
+    """
+    result = {}  # Inicializa un diccionario vacío para almacenar los resultados.
+    for letter in text:  # Itera sobre cada letra en el texto.
+        if letter not in result:  # Si la letra no está en el diccionario,
+            result[letter] = 0  # la agrega con una frecuencia inicial de 0.
+        result[letter] += 1  # Incrementa la frecuencia de la letra en 1.
+    return result  # Devuelve el diccionario con las frecuencias de las letras.
 
 
-count_letters("aaaaa")
-count_letters("tenant")
-count_letters("a long string with a lot of letters")
-
+print(count_letters("aaaaa"))
+print(count_letters("tenant"))
+print(count_letters("a long string with a lot of letters"))
+# {'a': 5}
+# {'t': 2, 'e': 1, 'n': 2, 'a': 1}
 # {
-#     "a": 2,
-#     " ": 7,
-#     "l": 3,
-#     "o": 3,
-#     "n": 2,
-#     "g": 2,
-#     "s": 2,
-#     "t": 5,
-#     "r": 2,
-#     "i": 2,
-#     "w": 1,
-#     "h": 1,
-#     "f": 1,
-#     "e": 2,
+#     'a': 2,
+#     ' ': 7,
+#     'l': 3,
+#     'o': 3,
+#     'n': 2,
+#     'g': 2,
+#     's': 2,
+#     't': 5,
+#     'r': 2,
+#     'i': 2,
+#     'w': 1,
+#     'h': 1,
+#     'f': 1,
+#     'e': 2,
 # }
 
-#########################################################################################
+# --- Comprobar si una clave existe en un diccionario y realizar acciones ---
+myDictionary = {}  # Inicializa un diccionario vacío.
+# Comprueba si una clave existe en el diccionario y realiza diferentes acciones basadas en el resultado
+key = "banana"  # Define la clave a buscar.
+if key in myDictionary:  # Comprueba si la clave está en el diccionario.
+    print(f"The value of {key} is {myDictionary[key]}")  # Imprime el valor si la clave existe.
+else:  # Si la clave no existe,
+    print(f"{key} is not found in the dictionary")  # imprime un mensaje indicando que no se encontró.
+# banana is not found in the dictionary
 
-myDictionary = {}
-# Check if a key exists in the dictionary and perform different actions based on the result
-key = "banana"
-if key in myDictionary:
-    print(f"The value of {key} is {myDictionary[key]}")
-else:
-    print(f"{key} is not found in the dictionary")
-
-############################################################################################
-
-
+# --- Sintaxis y operaciones comunes de diccionarios ---
 # Sintaxis
 my_dictionary = {"keyA": ["value1", "value2"], "keyB": ["value3", "value4"]}
 
@@ -169,8 +158,7 @@ my_dictionary = {"keyA": ["value1", "value2"], "keyB": ["value3", "value4"]}
 
 #     dictionary.copy() - Hace una copia de un diccionario.
 
-####################################################################################################################################3
-
+# --- Ejemplo de diccionario con listas como valores ---
 pet_dictionary = {
     "dogs": ["Yorkie", "Collie", "Bulldog"],
     "cats": ["Persian", "Scottish Fold", "Siberian"],
@@ -178,13 +166,10 @@ pet_dictionary = {
 }
 
 
-print(pet_dictionary.get("dogs", 0))
+print(pet_dictionary.get("dogs", 0))  # Imprime la lista de perros del diccionario.
 # Should print ['Yorkie', 'Collie', 'Bulldog']
 
-##################################################################################################################
-
-# Diccionarios frente a listas
-
+# --- Comparación entre diccionarios y listas ---
 # Los diccionarios son similares a las listas, pero existen algunas diferencias:
 # Tanto los diccionarios como las listas
 
@@ -211,8 +196,6 @@ print(pet_dictionary.get("dogs", 0))
 #     utilice comas para separar cada grupo de claves y cada valor dentro de un grupo de claves;
 
 #     hacen que sea más rápido y fácil para un intérprete de Python encontrar elementos específicos, en comparación con una lista.
-
-# ##########################################################################################################################################
 
 # Sólo listas:
 

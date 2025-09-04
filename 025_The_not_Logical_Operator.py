@@ -1,27 +1,27 @@
-# Test Example 1:
+# Operador lógico 'not': invierte (niega) un valor booleano
 
-x = 2*3 > 6
+# Test Example 1:
+# 2 * 3 = 6 y 6 > 6 es False, por lo tanto x es False
+x = 2 * 3 > 6
 print("The value of x is:")
 print(x)
 
-print("")  # Prints a blank line
+print()  # Imprime una línea en blanco
 
 print("The inverse value of x is:")
 print(not x)
 
-print("")
+print()
 # Test Example 2:
 
-# What happens when you negate a False statement? 
-# Click Run when you are ready to check your answer.
-
+# ¿Qué pasa al negar una afirmación que es False?
+# En Python es más claro usar "!=" que "not a == b".
 
 today = "Monday"
-print(not today == "Tuesday") 
+# "today != \"Tuesday\"" es True porque hoy no es martes
+print(today != "Tuesday")
 
-
-# The "today" variable states today is Monday. This makes the comparison
-# "today == Tuesday" False. The logical operator "not" inverts the False
-# result to become True. In other words, this expression asks if it is
-# false that today is not Tuesday. More succinctly, "not False" means 
-# True."
+# Explicación:
+# La variable today es "Monday", por lo que la comparación
+# "today == \"Tuesday\"" sería False. Usando "not False" obtendríamos True.
+# De forma más clara, se puede escribir como "today != \"Tuesday\"".

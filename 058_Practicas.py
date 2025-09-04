@@ -1,19 +1,27 @@
 # Destreza 1: Uso de métodos de cadena
 
-"""# Separe los valores numéricos de los valores de texto en una cadena
-utilizando .split()."""
+"""
+# Separe los valores numéricos de los valores de texto en una cadena
+utilizando .split().
 # Iterar sobre los elementos de una cadena.
-
 # Compruebe si el elemento contiene letras con .isalpha().
-
 # Asigna los elementos de la cadena dividida a nuevas variables.
-
 # Recorte los espacios en blanco sobrantes con .strip().
-
 # Formatea una cadena utilizando .format() y marcadores de posición de variables { } .
+"""
 
 
 def sales_price(item_and_price):
+    """
+    Analiza una cadena que contiene el nombre de un artículo y su precio,
+    y devuelve una cadena formateada que indica el artículo y su precio de venta.
+
+    Args:
+        item_and_price (str): Una cadena que contiene el nombre del artículo y su precio, separados por espacios.
+
+    Returns:
+        str: Una cadena formateada que indica el artículo y su precio de venta.
+    """
     # Inicializa variables "item" and "price" as strings.
     item = ""
     price = ""
@@ -46,11 +54,18 @@ print(sales_price("Winter fleece jackets 49.99"))
 
 ###############################################################################################################
 
-
 # Utilizar la función len() para medir una cadena.
 # This function accepts a string variable "data_field".
 def count_words(data_field):
+    """
+    Cuenta el número de palabras en una cadena.
 
+    Args:
+        data_field (str): La cadena para contar palabras.
+
+    Returns:
+        int: El número de palabras en la cadena.
+    """
     # Splits the string into individual words.
     split_data = data_field.split()
 
@@ -81,7 +96,16 @@ print(count_words("Catalog item 3523: Organic raw pumpkin seeds in shell"))
 # An older "recent_last" list contains [1989, 1992, 1997, 2001].
 # The lists need to be combined with the years in chronological order.
 def record_profit_years(recent_first, recent_last):
+    """
+    Combina dos listas de años en orden cronológico.
 
+    Args:
+        recent_first (list): Una lista de años en orden descendente.
+        recent_last (list): Una lista de años en orden ascendente.
+
+    Returns:
+        list: Una lista combinada de años en orden cronológico.
+    """
     # Reverse the order of the "recent_first" list so that it is in
     # chronological order.
     recent_first.reverse()
@@ -117,6 +141,16 @@ print(record_profit_years(recent_first, recent_last))
 
 # The function accepts two parameters: a start year and an end year
 def list_years(start, end):
+    """
+    Crea una lista de años dentro de un rango especificado.
+
+    Args:
+        start (int): El año de inicio del rango.
+        end (int): El año de fin del rango.
+
+    Returns:
+        list: Una lista de años dentro del rango especificado (inclusive).
+    """
     # It returns a list comprehension that creates a list of years in a for
     # loop using a range from the start year to the end year (inclusive of
     # the upper range year, using end+1).
@@ -134,7 +168,16 @@ print(list_years(1972, 1975))
 # The function accepts two variable integers through the parameters and
 # returns all odd numbers between x and y-1.
 def odd_numbers(x, y):
+    """
+    Devuelve una lista de números impares dentro de un rango especificado.
 
+    Args:
+        x (int): El inicio del rango (inclusive).
+        y (int): El final del rango (exclusive).
+
+    Returns:
+        list: Una lista de números impares dentro del rango especificado.
+    """
     # This list comprehension uses a for loop to iterate through values
     # of n in a range from x to y, with the value of y excluded (meaning
     # keep the default range() function behavior to exclude the
@@ -161,13 +204,20 @@ print(odd_numbers(5, 15))
 
 # The network() function accepts a dictionary "servers" as a parameter.
 def network(servers):
+    """
+    Genera una cadena que muestra la dirección IP de cada servidor en un diccionario.
 
+    Args:
+        servers (dict): Un diccionario donde las claves son los nombres de los servidores y los valores son sus direcciones IP.
+
+    Returns:
+        str: Una cadena que muestra la dirección IP de cada servidor.
+    """
     # A string variable is initialized to hold the "result".
     result = ""
 
     # For each "hostname" (key) and "IP address" (value) in the "servers" dictionary items...
     for hostname, IP_address in servers.items():
-
         # A string identifying the hostname and IP address for each server is added
         # to the "result" variable. The string .format() function and is used to plug
         # the hostname and IP_address variables into the designated {} placeholders
@@ -209,14 +259,21 @@ print(
 
 # The scores() function accepts a dictionary "game_scores" as a parameter.
 def reset_scores(game_scores):
+    """
+    Crea una copia de un diccionario de puntuaciones de juego y restablece todas las puntuaciones a 0.
 
+    Args:
+        game_scores (dict): Un diccionario donde las claves son los nombres de los jugadores y los valores son sus puntuaciones.
+
+    Returns:
+        dict: Un nuevo diccionario con las mismas claves que el diccionario original, pero con todos los valores establecidos en 0.
+    """
     # The .copy() dictionary method is used to create a new copy of the "game_scores".
     new_game_scores = game_scores.copy()
 
     # The for loop iterates over new_game_scores items, with the player as the key
     # and the score as the value.
     for player, score in new_game_scores.items():
-
         # The dictionary operation to assign a new value to a key is used
         # to reset the grade values to 0.
         new_game_scores[player] = 0
@@ -230,5 +287,3 @@ game1_scores = {"Arshi": 3, "Catalina": 7, "Diego": 6}
 # Call the "reset_scores" function with the "game1_scores" dictionary.
 print(reset_scores(game1_scores))
 # Should print {'Arshi': 0, 'Catalina': 0, 'Diego': 0}
-
-##############################################################################################################

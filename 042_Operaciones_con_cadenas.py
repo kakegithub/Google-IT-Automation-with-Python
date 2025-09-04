@@ -1,39 +1,22 @@
-###############################################################################
-# len(string) - Devuelve la longitud de la cadena
+# Operaciones con cadenas en Python: longitud, iteración, pertenencia, indexación y slicing
 
+# Longitud de una cadena
 print(len("abcde"))
-
 # prints 5
 
-################################################################################
-
-
-################################################################################
-# for character in string - Iterar sobre cada carácter de la cadena
+# Iterar sobre cada carácter de la cadena
 for c in "abcde":
     print(c)
-
 # prints "a", then "b", then "c", etc.
 
-#################################################################################
-
-
-##################################################################################
-#     if substring in string - Comprueba si la subcadena forma parte de la cadena
+# Comprobar si una subcadena forma parte de la cadena (operador 'in')
 print("abc" in "abcde")  # prints True
 print("def" in "abcde")  # prints False
 
-####################################################################################
-
-####################################################################################
-#    string[i] - Accede al carácter en el índice i de la cadena, comenzando en cero
-print("abcde"[2])  # prints "c"
+# Acceso por índice (empezando en 0) y por índice negativo (desde el final)
+print("abcde"[2])   # prints "c"
 print("abcde"[-1])  # prints "e"
 
-####################################################################################
-
-#####################################################################################
+# Rebanado (slicing): [inicio:fin] y desde un índice hasta el final
 print("abcde"[0:2])  # prints "ab"
-print("abcde"[2:])  # prints "cde"
-
-#####################################################################################
+print("abcde"[2:])   # prints "cde"

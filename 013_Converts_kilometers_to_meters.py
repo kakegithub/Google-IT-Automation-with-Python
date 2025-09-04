@@ -1,19 +1,28 @@
-# 1) The function converts kilometers (km) to meters (m)
+# 1) La función convierte kilómetros (km) a metros (m)
 def convert_distance(km):
-	m = km * 1000  # exactly 1000 meters in 1 kilometer
-	return m
+    """Convierte una distancia en kilómetros a metros.
+
+    Parámetros:
+        km (float | int): Distancia en kilómetros.
+
+    Retorna:
+        float: Distancia convertida a metros.
+    """
+    m = km * 1000  # 1 kilómetro equivale exactamente a 1000 metros
+    return m
 
 
-# Do not indent any of the following lines of code as they are
-# meant to be located outside of the function above
+# No indentes las siguientes líneas de código; deben estar
+# fuera de la función definida arriba.
 
 
+# Distancia del viaje en kilómetros
 my_trip_kilometers = 55
 
 
-# 2) Convert my_trip_kilometers to meters by calling the function above
+# 2) Convierte my_trip_kilometers a metros llamando a la función anterior
 my_trip_meters = convert_distance(my_trip_kilometers)
 
 
-# 3) Fill in the blank to print the result of converting my_trip_kilometers
+# 3) Imprime el resultado de convertir my_trip_kilometers a metros
 print("The distance in meters is " + str(my_trip_meters))
