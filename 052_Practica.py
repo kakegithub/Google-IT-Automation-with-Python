@@ -17,7 +17,6 @@ years = [
 
 # Inicializar la lista para los años actualizados.
 updated_years = []
-
 # Iterar sobre cada año en la lista.
 for year in years:
     # Comprobar si el año termina con "2023".
@@ -37,6 +36,8 @@ print(updated_years)
 # Utilizar una comprensión de lista para devolver valores.
 
 # Esta función crea una lista de números al cuadrado (n*n) utilizando una comprensión de lista.
+
+
 def squares(start, end):
     # Calcular el cuadrado de cada número en el rango [start, end] (inclusive).
     return [n * n for n in range(start, end + 1)]
@@ -44,7 +45,8 @@ def squares(start, end):
 
 print(squares(2, 3))  # Resultado esperado: [4, 9]
 print(squares(1, 5))  # Resultado esperado: [1, 4, 9, 16, 25]
-print(squares(0, 10))  # Resultado esperado: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+# Resultado esperado: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+print(squares(0, 10))
 
 # --- Grupo de destrezas 3 ---
 # Utilizar una comprensión de lista para modificar elementos de una lista.
@@ -76,6 +78,8 @@ print(updated_years)
 # Convierte de nuevo una lista en una cadena.
 
 # Esta función divide una cadena en una lista de palabras, modifica cada palabra moviendo el primer carácter al final, y luego une la lista de nuevo en una cadena.
+
+
 def change_string(given_string):
     # Inicializar la nueva cadena.
     new_string = ""
@@ -100,6 +104,8 @@ print(
 # Utilice el método string.join() para concatenar una cadena que proporciona un nombre de lista y sus elementos.
 
 # Esta función acepta un nombre de lista y una lista de elementos, y devuelve una cadena con el formato: "The "list_name" list includes: element1, element2, element3".
+
+
 def list_elements(list_name, elements):
     # Concatenar la cadena con el nombre de la lista y los elementos.
     return "The " + list_name + " list includes: " + ", ".join(elements)
@@ -116,6 +122,8 @@ print(
 # Utilice map() y convierta el objeto map en una lista para poder imprimir todos los resultados a la vez.
 
 # Una función simple para añadir 1 a un número dado.
+
+
 def add_one(number):
     return number + 1
 
